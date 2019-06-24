@@ -7,7 +7,7 @@ namespace POO
         
         static void Main(string[] args)
         {
-            A claseA1 = new C();
+            /*A claseA1 = new C();
             claseA1.F();
 
             A claseA2 = new D();
@@ -19,10 +19,66 @@ namespace POO
             Console.WriteLine($"El sueldo de {empleado.Apellido} es de ${empleado.SueldoMensual()}");
 
             Empleado empleadoFL = new Freelancer(23456, "Luis", "Lopez", 250, 80);
-            Console.WriteLine($"El sueldo de {empleadoFL.Apellido} es de ${empleadoFL.SueldoMensual()}");
+            Console.WriteLine($"El sueldo de {empleadoFL.Apellido} es de ${empleadoFL.SueldoMensual()}");*/
+
+            //MainCoche();
+
+            //mensajeDelegado mDelegado = mensajeEstatico;
+            //mDelegado("Hola Mundo", DateTime.Now.Ticks);
+
+            Action<string, long> mensaje;
+
+            mensaje = delegate(string s, long ticks)
+            {
+                if (ticks % 2 == 0)
+                    Console.WriteLine("Ticks par: {0} - Mensaje: {1}", ticks, s);
+                else
+                    Console.WriteLine("Ticks impar: {0} - Mensaje: {1}", ticks, s);
+            };
+
+            //mensaje("Hola Mundo", DateTime.Now.Ticks);
+
+            mensaje = (s, ticks) => 
+            {
+                if (ticks % 2 == 0)
+                    Console.WriteLine("Ticks par: {0} - Mensaje: {1}", ticks, s);
+                else
+                    Console.WriteLine("Ticks impar: {0} - Mensaje: {1}", ticks, s);
+            };
+
+            //mensaje("Hola Mundo", DateTime.Now.Ticks);
+
+            mensajeUpper mUpper = mensajeEstaticoUpper;
+            //Console.WriteLine($"El mensaje en mayusculas es {mUpper("hola mundo")}");
+
+            Func<string, string> mensajeMayuscula = s => s.ToUpper();
+            //Console.WriteLine($"El mensaje en mayusculas es {mensajeMayuscula("hola mundo")}");
+
+            Func<string, string> mensajeMayuscula2 = delegate(string s)
+            {
+                return s.ToUpper();
+            };
+            Console.WriteLine($"El mensaje en mayusculas es {mensajeMayuscula2("hola mundo")}");
+
+            
+
 
         }
+
+        public static string mensajeEstaticoUpper(string mensaje)
+        {
+            return mensaje.ToUpper();
+        }
         
+        public static void mensajeEstatico(string mensaje, long ticks)
+        {
+            if (ticks % 2 == 0)
+                Console.WriteLine("Ticks par: {0} - Mensaje: {1}", ticks, mensaje);
+            else
+                Console.WriteLine("Ticks impar: {0} - Mensaje: {1}", ticks, mensaje);
+        }
+
+
         
         static void MainCuenta(string[] args)
         {
@@ -44,13 +100,14 @@ namespace POO
             //cuenta.Saldo
         }
         
-        static void MainCoche(string[] args)
+        static void MainCoche()
         {
             //Coche coche = new Coche("AOW 689", "Blanco", "Ford", "Fiesta");
             //CocheInteligente coche = new CocheInteligente("HWW 215", "Azul", "Honda", "Civic");
             Coche coche = new CocheInteligente("HWW 215", "Azul", "Honda", "Civic");
 
             Console.WriteLine("Los datos de mi choche son:");
+            Console.WriteLine(coche.GetFullDescription());
             Console.WriteLine($"Marca: {coche.Marca}");
             Console.WriteLine($"Color: {coche.Color}");
             Console.WriteLine($"Patente: {coche.Patente}");

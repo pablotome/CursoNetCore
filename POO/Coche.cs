@@ -2,7 +2,7 @@ using System;
 
 namespace POO
 {
-    public class Coche
+    public class Coche : ITestInterface
     {
         public string Patente;
         public string Color;
@@ -44,6 +44,11 @@ namespace POO
         {
             Console.WriteLine("Estacionando el coche en modo automático normal");
             velocidad = 0;
+        }
+
+        public string GetFullDescription()
+        {
+            return this.Patente + " - " + this.Marca + " - " + this.Modelo;
         }
     }
 }
