@@ -1,0 +1,11 @@
+C:\Users\cisco\Documents\CursoNetCore\Async\bin\Debug\netcoreapp2.2\Async.deps.json
+C:\Users\cisco\Documents\CursoNetCore\Async\bin\Debug\netcoreapp2.2\Async.runtimeconfig.json
+C:\Users\cisco\Documents\CursoNetCore\Async\bin\Debug\netcoreapp2.2\Async.runtimeconfig.dev.json
+C:\Users\cisco\Documents\CursoNetCore\Async\bin\Debug\netcoreapp2.2\Async.dll
+C:\Users\cisco\Documents\CursoNetCore\Async\bin\Debug\netcoreapp2.2\Async.pdb
+C:\Users\cisco\Documents\CursoNetCore\Async\obj\Debug\netcoreapp2.2\Async.csprojAssemblyReference.cache
+C:\Users\cisco\Documents\CursoNetCore\Async\obj\Debug\netcoreapp2.2\Async.csproj.CoreCompileInputs.cache
+C:\Users\cisco\Documents\CursoNetCore\Async\obj\Debug\netcoreapp2.2\Async.AssemblyInfoInputs.cache
+C:\Users\cisco\Documents\CursoNetCore\Async\obj\Debug\netcoreapp2.2\Async.AssemblyInfo.cs
+C:\Users\cisco\Documents\CursoNetCore\Async\obj\Debug\netcoreapp2.2\Async.dll
+C:\Users\cisco\Documents\CursoNetCore\Async\obj\Debug\netcoreapp2.2\Async.pdb
