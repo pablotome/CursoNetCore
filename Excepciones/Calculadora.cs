@@ -6,13 +6,24 @@ namespace Excepciones
     {
         public int Calcular(int numero1, int numero2, string operacion)
         {
+            throw new ArgumentNullException(nameof(numero1));
+            
             if (operacion == "/")
-                return Division(numero1, numero2);
+            {
+                try
+                {
+                    return Division(numero1, numero2);
+                }
+                catch(DivideByZeroException ex)
+                {
+                    throw new ArithmeticException("Ocurrio una excepcion durante el cálculo", ex);
+                }
+            }
             else if (operacion == "*")
                 return Multiplicacion(numero1, numero2);
             else if (operacion == "-")
                 return Resta(numero1, numero2);
-            else if (operacion == "+")
+            else if (operacion == "+") 
                 return Suma(numero1, numero2);
             else
                 throw new Exception("Pasame la operación");

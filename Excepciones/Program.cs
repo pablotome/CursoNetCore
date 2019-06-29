@@ -21,9 +21,17 @@ namespace Excepciones
                     Console.WriteLine($"Resultado: {calculadora.Calcular(numero1, numero2, operacion)}");
                 }
             }
+            catch(ArgumentException ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
             catch(Exception ex)
             {
-
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Console.WriteLine("Final del programa");
             }
         }
     }
