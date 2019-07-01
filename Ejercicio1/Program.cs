@@ -1,39 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Ejercicio1
 {
     class Program
     {
+
+        static Persona alumno, profesor;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
-            List<Materia> materiasCursa = new List<Materia>();
-            List<Materia> materiasDicta = new List<Materia>();
+            alumno = new Alumno("Juan", "Perez");
+            profesor = new Profesor("Ruben", "Gomez");
 
-            materiasCursa.Add(new Materia("Matematica", 4));
-            materiasCursa.Add(new Materia("Lengua", 5));
-            materiasCursa.Add(new Materia("Ingles", 3));
-            materiasCursa.Add(new Materia("Geografia", 2));
-            
-            materiasDicta.Add(new Materia("Computación", 2));
-            materiasDicta.Add(new Materia("Quimica", 3));
-            materiasDicta.Add(new Materia("Fisica", 2));
-            materiasDicta.Add(new Materia("Historia", 5));
+            //TimeSpan ts = EjecucionAsincronica();
+            TimeSpan ts = EjecucionSincronica();
+            Console.WriteLine($"Duración: {ts.TotalMilliseconds}");
+
+            alumno.EventoMateriaExiste += PersonaTieneMateria;
+            profesor.EventoMateriaExiste += PersonaTieneMateria;
 
 
-            Persona alumno = new Alumno("Juan", "Perez", materiasCursa);
-            Persona profesor = new Profesor("Ruben", "Gomez", materiasDicta);
+            alumno.CargarMateria(new Materia("Lengua", 5));
+
+            profesor.CargarMateria(new Materia("Lengua 2", 5));
+
+
 
             Console.WriteLine(alumno.DarInformacion());
-            
             Console.WriteLine(profesor.DarInformacion());
 
+        }
 
+        public static void PersonaTieneMateria(Persona persona, Materia materia)
+        {
+            Console.WriteLine(persona.MensajeMateriaExistente(materia));
+        }
 
+        static TimeSpan EjecucionAsincronica()
+        {
+            DateTime inicio, fin;
+            inicio = DateTime.Now;
+            Task tarea1 = Task.Run(() => alumno.CargarMaterias());
+            Task tarea2 = Task.Run(() => profesor.CargarMaterias());
+            Task.WaitAll(tarea1, tarea2);
+            fin = DateTime.Now;
 
+            return fin.Subtract(inicio);
+        }
 
+        static TimeSpan EjecucionSincronica()
+        {
+            DateTime inicio, fin;
+            inicio = DateTime.Now;
+            alumno.CargarMaterias();
+            profesor.CargarMaterias();
+            fin = DateTime.Now;
+
+            return fin.Subtract(inicio);
         }
     }
 }
