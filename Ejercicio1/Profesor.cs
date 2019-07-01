@@ -57,6 +57,11 @@ namespace Ejercicio1
             return $"El profesor {this.Nombre} {this.Apellido} ya dicta la materia {materia.Nombre}";
         }
 
+        public override int CantidadMaterias{
+            get {
+                return dicta.Count;
+            }
+        }
 
 
     }

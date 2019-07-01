@@ -47,5 +47,7 @@ namespace Ejercicio1
         public abstract event MateriaExiste EventoMateriaExiste;
 
         public abstract string MensajeMateriaExistente(Materia materia);
+
+        public abstract int CantidadMaterias { get; }
     }
 }

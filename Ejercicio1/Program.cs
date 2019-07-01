@@ -23,9 +23,15 @@ namespace Ejercicio1
             alumno.EventoMateriaExiste += PersonaTieneMateria;
             profesor.EventoMateriaExiste += PersonaTieneMateria;
 
+            string auxNombre;
 
-            alumno.CargarMateria(new Materia("Lengua", 5));
-
+            do{
+                Console.Write("Ingrese el nombre de la materia: ");
+                auxNombre = Console.ReadLine();
+                alumno.CargarMateria(new Materia(auxNombre, 5));
+                Console.WriteLine($"Cantidad de materias: {alumno.CantidadMaterias}");
+            }while(auxNombre != string.Empty);
+            
             profesor.CargarMateria(new Materia("Lengua 2", 5));
 
 
