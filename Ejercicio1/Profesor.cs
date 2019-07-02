@@ -22,7 +22,7 @@ namespace Ejercicio1
 
         public override string DarInformacion()
         {
-            return $"Nombre: {nombre} - Apellido: {apellido} - Materias que dicta: {string.Join('|', dicta.Select(m => m.Nombre))}";
+            return $"Nombre: {nombre} - Apellido: {apellido} - Materias que dicta: {string.Join('\n', dicta.Select(m => m.Nombre))}";
         }
 
         public override async Task CargarMaterias()

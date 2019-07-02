@@ -16,23 +16,36 @@ namespace Ejercicio1
             alumno = new Alumno("Juan", "Perez");
             profesor = new Profesor("Ruben", "Gomez");
 
-            //TimeSpan ts = EjecucionAsincronica();
-            TimeSpan ts = EjecucionSincronica();
+            TimeSpan ts = EjecucionAsincronica();
+            //TimeSpan ts = EjecucionSincronica();
             Console.WriteLine($"Duración: {ts.TotalMilliseconds}");
 
             alumno.EventoMateriaExiste += PersonaTieneMateria;
             profesor.EventoMateriaExiste += PersonaTieneMateria;
 
-            string auxNombre;
+            string auxNombre = string.Empty;
+            int auxCarga;
 
             do{
-                Console.Write("Ingrese el nombre de la materia: ");
-                auxNombre = Console.ReadLine();
-                alumno.CargarMateria(new Materia(auxNombre, 5));
-                Console.WriteLine($"Cantidad de materias: {alumno.CantidadMaterias}");
+                try
+                {
+                    Console.Write("Ingrese el nombre de la materia: ");
+                    auxNombre = Console.ReadLine();
+                    Console.Write("Ingrese la carga horaria: ");
+                    auxCarga = int.Parse(Console.ReadLine());
+                    alumno.CargarMateria(new Materia(auxNombre, 5));
+                    profesor.CargarMateria(new Materia(auxNombre, 5));
+                }
+                catch(Exception ex)
+                {
+                    Console.Write($"\n\n{ex.Message}\n\n");
+                }
+                finally
+                {
+                    Console.WriteLine($"Cantidad de materias del alumno: {alumno.CantidadMaterias}");
+                    Console.WriteLine($"Cantidad de materias del profesor: {profesor.CantidadMaterias}");
+                }
             }while(auxNombre != string.Empty);
-            
-            profesor.CargarMateria(new Materia("Lengua 2", 5));
 
 
 
