@@ -1,7 +1,11 @@
+using System.Collections.Generic;
+using Torneo.Models;
+using System.Threading.Tasks;
+
 namespace EquiposAFA.Servicios
 {
     public interface IServicioSistema
     {
-         List<Equipo> ObtenerEquipos();
+        Task<List<Equipo>> ObtenerEquiposAsync();
     }
 }
