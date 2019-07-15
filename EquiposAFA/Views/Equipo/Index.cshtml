@@ -1,26 +1,23 @@
-@model TodoViewModel
-@using Humanizer
-@{
-  ViewData["Title"] = "Manage your todo list";
-}
+@model EquipoViewModel
+
 <div class="panel panel-default todo-panel">
 	<div class="panel-heading">@ViewData["Title"]</div>
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<td>&#x2714;</td>
-					<td>Item</td>
-					<td>Due</td>
+					<!--<td>&#x2714;</td>-->
+					<td>GUID</td>
+					<td>Nombre</td>
 				</tr>
 		  </thead>
-		  @foreach (var item in Model.Items)
+		  @foreach (var item in Model.Equipos)
 		  {
 			<tr>
-				<td>
+				<!--<td>
 					<input type="checkbox" class="done-checkbox">
-				</td>
-				<td>@item.Title</td>
-				<td>@item.DueAt.Humanize()</td>
+				</td>-->
+				<td>@item.CodEquipo</td>
+				<td>@item.Nombre</td>
 			</tr>
 		  }
 	  </table>
