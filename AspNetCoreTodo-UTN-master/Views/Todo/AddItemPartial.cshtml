@@ -2,6 +2,7 @@
 <form asp-action="AddItem" method="POST">
     <label asp-for="Title">Add a new item:</label>
     <input asp-for="Title"/>
-    <input asp-for="DueAt" class="datepicker"/>
+    <label asp-for="DueAt">DueAt:</label>
+    <input asp-for="DueAt" class="datepicker" autocomplete="off"/>
     <button type="submit">Add</button>
 </form>
