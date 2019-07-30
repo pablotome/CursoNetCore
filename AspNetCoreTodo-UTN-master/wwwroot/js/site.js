@@ -31,3 +31,7 @@ function mostrarClientes(){
         $("#tabla").append("<tr><td>"+c.apellido+"</td></tr>");
     });
 }
+
+$(document).ready(function(){
+    $('.datepicker').datepicker();
+})
