@@ -1,0 +1,15 @@
+https://stackoverflow.com/questions/46940710/getting-value-from-appsettings-json-in-net-core
+https://github.com/nhibernate/NHibernate.AspNetCore.Identity
+https://github.com/BlackrockDigital/startbootstrap-sb-admin-2
+https://startbootstrap.com/previews/sb-admin-2/
+https://github.com/aspnet/AspNetCore.Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/IdentityDemo
+http://nicbell.net/blog/simple-nhibernate-session-manager/
+https://stackoverflow.com/questions/50134118/how-to-test-my-nhibernate-with-websessioncontext
+https://blogs.encamina.com/piensa-en-software-desarrolla-en-colores/moq-net-introduccion-utilizarlo-ejemplos/
+https://www.codemag.com/Article/0907121/Relational-Database-Persistence-with-NHibernate-Part-2
+https://codeday.me/es/qa/20190320/330964.html
+https://codeday.me/es/qa/20190318/285498.html
+https://blog.benhall.me.uk/2008/01/introduction-to-xunit/
+https://github.com/FluentNHibernate/fluent-nhibernate/wiki/Fluent-configuration
+https://stackoverflow.com/questions/9706288/nhibernate-fluentnhibernate-and-sqlite-in-memory-for-mapping-test
+https://json.codes/blog/in-memory-database-using-fluent-nhibernate/
